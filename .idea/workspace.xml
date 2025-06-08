@@ -5,49 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520ae608-0e14-47f4-8821-3a82b5451a51" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/text-extractor.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/prompts.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/data_exploration.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/model_testing.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/batch_process.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/export_results.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/run_analysis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/text_client_workflow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/language_detector.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/pdf_processor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/text_extractor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/extractors/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/extractors/base_extractor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/extractors/product_extractor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/extractors/validation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/llm/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/llm/openai_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/llm/prompt_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/llm/response_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/extraction_result.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/product.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/storage/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/storage/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/storage/export_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/helpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/text_preprocessing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_extractors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_pdf_processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,25 +33,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.text_client_workflow.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Repos/text-extractor/tests&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.documentation.PythonDocumentationConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.text_client_workflow.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Repos/text-extractor/tests",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.documentation.PythonDocumentationConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Repos\text-extractor\tests" />
@@ -152,6 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749136968840</updated>
       <workItem from="1749397637864" duration="4769000" />
+      <workItem from="1749402664971" duration="705000" />
     </task>
     <servers />
   </component>

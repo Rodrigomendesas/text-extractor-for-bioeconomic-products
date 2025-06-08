@@ -2,3 +2,8 @@
 2025-06-08 13:59:25,821 - src - INFO - Bioeconomic Products Analysis System v1.0.0 initialized
 2025-06-08 13:59:26,134 - src.llm.openai_client - INFO - OpenAI client initialized with model: gpt-4.1-nano-2025-04-14
 2025-06-08 13:59:41,661 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 14:23:44,583 - src.utils.helpers - INFO - Logging initialized at level INFO
+2025-06-08 14:23:44,584 - src - INFO - Bioeconomic Products Analysis System v1.0.0 initialized
+2025-06-08 14:23:44,924 - src.llm.openai_client - INFO - OpenAI client initialized with model: gpt-4.1-nano-2025-04-14
+2025-06-08 14:23:46,426 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-06-08 14:23:46,427 - src.llm.openai_client - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************hqcA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
