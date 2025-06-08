@@ -1,0 +1,4 @@
+2025-06-08 13:59:25,821 - src.utils.helpers - INFO - Logging initialized at level INFO
+2025-06-08 13:59:25,821 - src - INFO - Bioeconomic Products Analysis System v1.0.0 initialized
+2025-06-08 13:59:26,134 - src.llm.openai_client - INFO - OpenAI client initialized with model: gpt-4.1-nano-2025-04-14
+2025-06-08 13:59:41,661 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"

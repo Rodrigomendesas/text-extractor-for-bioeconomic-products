@@ -1,0 +1,50 @@
+{
+  "resultado_extracao": {
+    "produtos": [],
+    "resumo": "O texto destaca a importância dos bosques naturais na Amazônia peruana, fornecendo produtos florestais e serviços ambientais, além de abordar questões de desmatamento e conservação.",
+    "idioma_detectado": "es",
+    "total_produtos": 0,
+    "fonte_documento": "UNDP_Peru_Paisajes_Productivos_Sostenibles_DT",
+    "metadados_processamento": {
+      "total_produtos_extraidos": 0,
+      "produtos_alta_confianca": 0,
+      "paises_encontrados": [],
+      "tipos_uso_encontrados": [],
+      "produtos_com_nome_cientifico": 0,
+      "tamanho_texto_original": 2481,
+      "tamanho_resposta": 570,
+      "sucesso_parsing": true
+    }
+  },
+  "avaliacao_qualidade": {
+    "qualidade_geral": 0.0,
+    "total_produtos": 0,
+    "confianca_media": 0.0,
+    "produtos_com_nome_cientifico": 0,
+    "produtos_com_paises": 0,
+    "produtos_com_usos": 0,
+    "produtos_alta_confianca": 0,
+    "produtos_baixa_confianca": 0,
+    "observacoes": [
+      "Nenhum produto extraído"
+    ]
+  },
+  "metadados_pdf": {
+    "nome_arquivo": "UNDP_Peru_Paisajes_Productivos_Sostenibles_DT.pdf",
+    "paginas": 20,
+    "caracteres": 50392,
+    "chunks": 23,
+    "metodo_extracao": "pypdf2",
+    "idioma": {
+      "code": "es",
+      "name": "Spanish"
+    }
+  },
+  "custos": {
+    "tokens_entrada": 1121,
+    "tokens_saida": 162,
+    "tokens_total": 1283,
+    "custo_usd": 0.000177,
+    "modelo": "gpt-4.1-nano-2025-04-14"
+  }
+}

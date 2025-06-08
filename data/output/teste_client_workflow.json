@@ -1,0 +1,111 @@
+{
+  "resultado_extracao": {
+    "produtos": [
+      {
+        "nome_popular": "açaí",
+        "nome_cientifico": "Euterpe oleracea",
+        "paises": [
+          "Brasil"
+        ],
+        "tipos_uso": [
+          "alimentar",
+          "cosmético"
+        ],
+        "fonte": "Relatório Sociobiodiversidade Pan-Amazônica 2024",
+        "confianca": 0.9
+      },
+      {
+        "nome_popular": "castanha-do-pará",
+        "nome_cientifico": "Bertholletia excelsa",
+        "paises": [
+          "Brasil"
+        ],
+        "tipos_uso": [
+          "alimentar"
+        ],
+        "fonte": "Relatório Sociobiodiversidade Pan-Amazônica 2024",
+        "confianca": 0.9
+      },
+      {
+        "nome_popular": "copaíba",
+        "nome_cientifico": "Copaifera officinalis",
+        "paises": [
+          "Colômbia"
+        ],
+        "tipos_uso": [
+          "medicinal"
+        ],
+        "fonte": "Relatório Sociobiodiversidade Pan-Amazônica 2024",
+        "confianca": 0.9
+      },
+      {
+        "nome_popular": "maca",
+        "nome_cientifico": "Lepidium meyenii",
+        "paises": [
+          "Peru"
+        ],
+        "tipos_uso": [
+          "alimentar"
+        ],
+        "fonte": "Relatório Sociobiodiversidade Pan-Amazônica 2024",
+        "confianca": 0.9
+      },
+      {
+        "nome_popular": "buriti",
+        "nome_cientifico": "Mauritia flexuosa",
+        "paises": [
+          "Equador"
+        ],
+        "tipos_uso": [
+          "artesanal"
+        ],
+        "fonte": "Relatório Sociobiodiversidade Pan-Amazônica 2024",
+        "confianca": 0.9
+      }
+    ],
+    "resumo": "Foram identificados produtos da sociobiodiversidade utilizados na região amazônica, incluindo alimentos, produtos medicinais, cosméticos e artesanais, com destaque para espécies como açaí, castanha-do-pará, copaíba, maca e buriti, presentes em diferentes países da Pan-Amazônia.",
+    "idioma_detectado": "pt",
+    "total_produtos": 5,
+    "fonte_documento": "Relatório Sociobiodiversidade Pan-Amazônica 2024",
+    "metadados_processamento": {
+      "total_produtos_extraidos": 5,
+      "produtos_alta_confianca": 5,
+      "paises_encontrados": [
+        "colômbia",
+        "peru",
+        "brasil",
+        "equador"
+      ],
+      "tipos_uso_encontrados": [
+        "cosmético",
+        "artesanal",
+        "alimentar",
+        "medicinal"
+      ],
+      "produtos_com_nome_cientifico": 5,
+      "tamanho_texto_original": 772,
+      "tamanho_resposta": 1609,
+      "sucesso_parsing": true
+    }
+  },
+  "avaliacao_qualidade": {
+    "total_produtos": 5,
+    "confianca_media": 0.9,
+    "produtos_com_nome_cientifico": 5,
+    "produtos_com_paises": 5,
+    "produtos_com_usos": 5,
+    "produtos_alta_confianca": 5,
+    "produtos_baixa_confianca": 0,
+    "qualidade_geral": 0.98,
+    "observacoes": [
+      "Boa qualidade geral dos dados"
+    ]
+  },
+  "custos": {
+    "tokens_entrada": 613,
+    "tokens_saida": 515,
+    "tokens_total": 1128,
+    "custo_usd": 0.000267,
+    "modelo": "gpt-4.1-nano-2025-04-14"
+  }
+}

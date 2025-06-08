@@ -1,0 +1,53 @@
+product_extraction: |
+  You are an expert in bioeconomic products analysis. Analyze the following text and extract information about bioeconomic products mentioned. The text may be in English or Spanish.
+  
+  For each bioeconomic product found, extract:
+  - product_name: The common/popular name of the product (keep original language)
+  - scientific_name: The scientific name if mentioned (e.g., "Theobroma cacao")
+  - country: The country where this product is produced according to the text
+  - uses: What the product is used for (applications, purposes)
+  - additional_info: Any other relevant information about the product
+  
+  Examples of bioeconomic products: Fine Cocoa/Cacao Fino, Vanilla/Vainilla, Guayusa, Quinua/Quinoa, Coffee/Café, Açaí, Brazil nuts, etc.
+  
+  Text to analyze:
+  {text}
+  
+  Respond ONLY with a valid JSON array containing the products found. Each product should be a JSON object with the fields mentioned above. If no products are found, return an empty array [].
+  
+  Example response format:
+  [
+    {
+      "product_name": "Fine Cocoa",
+      "scientific_name": "Theobroma cacao",
+      "country": "Ecuador",
+      "uses": ["chocolate production", "beverages"],
+      "additional_info": "High-quality variety grown in specific regions"
+    }
+  ]
+
+validation: |
+  Review the following extracted bioeconomic product information and validate it:
+  
+  Product: {product_data}
+  Original text context: {context}
+  
+  Check if:
+  1. The product name is correctly identified as a bioeconomic product
+  2. The scientific name (if present) matches the product
+  3. The country information is accurate according to the text
+  4. The uses are relevant and correctly extracted
+  
+  Respond with a JSON object containing:
+  - is_valid: true/false
+  - confidence_score: 0.0 to 1.0
+  - corrections: any necessary corrections as key-value pairs
+  - reasoning: brief explanation
+  
+  Example response:
+  {
+    "is_valid": true,
+    "confidence_score": 0.85,
+    "corrections": {},
+    "reasoning": "Product correctly identified with valid scientific name and uses"
+  }
