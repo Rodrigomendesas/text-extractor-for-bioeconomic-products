@@ -16,29 +16,29 @@ logger = logging.getLogger(__name__)
 
 class DatabaseManager:
     """Manages SQLite database connections and operations."""
-    
+
     def __init__(self, db_path: Optional[Path] = None):
         """
         Initialize database manager.
-        
+
         Args:
             db_path: Path to SQLite database file
         """
-        self.db_path = db_path or settings.database_path
+        self.db_path = db_path or (settings.database_dir / "products.db")
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
-        
+
         # Initialize database
         self._init_database()
         logger.info(f"Database initialized at: {self.db_path}")
-    
+
     def _init_database(self):
         """Initialize database schema."""
         with self.get_connection() as conn:
             self._create_tables(conn)
-    
+
     def _create_tables(self, conn: sqlite3.Connection):
         """Create database tables."""
-        
+
         # Products table
         conn.execute("""
             CREATE TABLE IF NOT EXISTS products (
@@ -60,7 +60,7 @@ class DatabaseManager:
                 updated_at TEXT
             )
         """)
-        
+
         # Product uses table
         conn.execute("""
             CREATE TABLE IF NOT EXISTS product_uses (
@@ -75,7 +75,7 @@ class DatabaseManager:
                 FOREIGN KEY (product_id) REFERENCES products (id)
             )
         """)
-        
+
         # Extraction results table
         conn.execute("""
             CREATE TABLE IF NOT EXISTS extraction_results (
@@ -103,7 +103,7 @@ class DatabaseManager:
                 completed_at TEXT
             )
         """)
-        
+
         # Link table for extraction results and products
         conn.execute("""
             CREATE TABLE IF NOT EXISTS extraction_products (
@@ -114,16 +114,16 @@ class DatabaseManager:
                 FOREIGN KEY (product_id) REFERENCES products (id)
             )
         """)
-        
+
         # Create indexes
         conn.execute("CREATE INDEX IF NOT EXISTS idx_products_name ON products (product_name)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_products_country ON products (origin_country)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_products_confidence ON products (confidence_score)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_uses_category ON product_uses (category)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_extraction_status ON extraction_results (status)")
-        
+
         conn.commit()
-    
+
     @contextmanager
     def get_connection(self):
         """Get database connection with context manager."""
@@ -133,11 +133,11 @@ class DatabaseManager:
             yield conn
         finally:
             conn.close()
-    
+
     def backup_database(self, backup_path: Path):
         """
         Create a backup of the database.
-        
+
         Args:
             backup_path: Path for backup file
         """
@@ -146,21 +146,21 @@ class DatabaseManager:
             source.backup(backup_conn)
             backup_conn.close()
         logger.info(f"Database backed up to: {backup_path}")
-    
+
     def get_database_stats(self) -> Dict[str, Any]:
         """Get database statistics."""
         with self.get_connection() as conn:
             stats = {}
-            
+
             # Count tables
             tables = ['products', 'product_uses', 'extraction_results', 'extraction_products']
             for table in tables:
                 cursor = conn.execute(f"SELECT COUNT(*) FROM {table}")
                 stats[f"{table}_count"] = cursor.fetchone()[0]
-            
+
             # Database file size
             stats['database_size_bytes'] = self.db_path.stat().st_size
-            
+
             # Most recent extraction
             cursor = conn.execute("""
                 SELECT created_at FROM extraction_results 
@@ -168,30 +168,30 @@ class DatabaseManager:
             """)
             result = cursor.fetchone()
             stats['last_extraction'] = result[0] if result else None
-            
+
             return stats
 
 
 class ProductDatabase:
     """High-level interface for product database operations."""
-    
+
     def __init__(self, db_manager: Optional[DatabaseManager] = None):
         """
         Initialize product database.
-        
+
         Args:
             db_manager: DatabaseManager instance
         """
         self.db_manager = db_manager or DatabaseManager()
         self.logger = logging.getLogger(__name__)
-    
+
     def save_product(self, product: Product) -> bool:
         """
         Save a product to the database.
-        
+
         Args:
             product: Product to save
-            
+
         Returns:
             True if saved successfully
         """
@@ -224,10 +224,10 @@ class ProductDatabase:
                     product.created_at.isoformat(),
                     product.updated_at.isoformat()
                 ))
-                
+
                 # Delete existing uses and insert new ones
                 conn.execute("DELETE FROM product_uses WHERE product_id = ?", (product.id,))
-                
+
                 for use in product.uses:
                     conn.execute("""
                         INSERT INTO product_uses (
@@ -243,22 +243,22 @@ class ProductDatabase:
                         use.market_value,
                         use.sustainability_notes
                     ))
-                
+
                 conn.commit()
                 self.logger.debug(f"Saved product: {product.product_name}")
                 return True
-                
+
         except Exception as e:
             self.logger.error(f"Failed to save product {product.product_name}: {e}")
             return False
-    
+
     def get_product(self, product_id: str) -> Optional[Product]:
         """
         Get a product by ID.
-        
+
         Args:
             product_id: Product ID
-            
+
         Returns:
             Product instance or None if not found
         """
@@ -268,25 +268,25 @@ class ProductDatabase:
                 cursor = conn.execute("""
                     SELECT * FROM products WHERE id = ?
                 """, (product_id,))
-                
+
                 row = cursor.fetchone()
                 if not row:
                     return None
-                
+
                 # Get uses
                 uses_cursor = conn.execute("""
                     SELECT * FROM product_uses WHERE product_id = ?
                 """, (product_id,))
-                
+
                 uses_data = uses_cursor.fetchall()
-                
+
                 # Convert to Product
                 return self._row_to_product(row, uses_data)
-                
+
         except Exception as e:
             self.logger.error(f"Failed to get product {product_id}: {e}")
             return None
-    
+
     def search_products(
         self,
         name_query: Optional[str] = None,
@@ -297,54 +297,54 @@ class ProductDatabase:
     ) -> List[Product]:
         """
         Search products with various filters.
-        
+
         Args:
             name_query: Product name search query
             country: Country filter
             category: Use category filter
             min_confidence: Minimum confidence score
             limit: Maximum number of results
-            
+
         Returns:
             List of matching products
         """
         try:
             conditions = []
             params = []
-            
+
             # Build WHERE clause
             if name_query:
                 conditions.append("p.product_name LIKE ?")
                 params.append(f"%{name_query}%")
-            
+
             if country:
                 conditions.append("p.origin_country LIKE ?")
                 params.append(f"%{country}%")
-            
+
             if min_confidence is not None:
                 conditions.append("p.confidence_score >= ?")
                 params.append(min_confidence)
-            
+
             # Category filter requires join
             query = """
                 SELECT DISTINCT p.* FROM products p
             """
-            
+
             if category:
                 query += " JOIN product_uses pu ON p.id = pu.product_id"
                 conditions.append("pu.category = ?")
                 params.append(category)
-            
+
             if conditions:
                 query += " WHERE " + " AND ".join(conditions)
-            
+
             query += " ORDER BY p.confidence_score DESC, p.product_name"
             query += f" LIMIT {limit}"
-            
+
             with self.db_manager.get_connection() as conn:
                 cursor = conn.execute(query, params)
                 rows = cursor.fetchall()
-                
+
                 products = []
                 for row in rows:
                     # Get uses for each product
@@ -352,24 +352,24 @@ class ProductDatabase:
                         SELECT * FROM product_uses WHERE product_id = ?
                     """, (row['id'],))
                     uses_data = uses_cursor.fetchall()
-                    
+
                     product = self._row_to_product(row, uses_data)
                     if product:
                         products.append(product)
-                
+
                 return products
-                
+
         except Exception as e:
             self.logger.error(f"Failed to search products: {e}")
             return []
-    
+
     def save_extraction_result(self, result: ExtractionResult) -> bool:
         """
         Save an extraction result to the database.
-        
+
         Args:
             result: ExtractionResult to save
-            
+
         Returns:
             True if saved successfully
         """
@@ -411,32 +411,32 @@ class ProductDatabase:
                     result.created_at.isoformat(),
                     result.completed_at.isoformat() if result.completed_at else None
                 ))
-                
+
                 # Save products
                 for product in result.products:
                     self.save_product(product)
-                    
+
                     # Link product to extraction
                     conn.execute("""
                         INSERT OR REPLACE INTO extraction_products (extraction_id, product_id)
                         VALUES (?, ?)
                     """, (result.id, product.id))
-                
+
                 conn.commit()
                 self.logger.info(f"Saved extraction result: {result.id}")
                 return True
-                
+
         except Exception as e:
             self.logger.error(f"Failed to save extraction result {result.id}: {e}")
             return False
-    
+
     def get_extraction_results(self, limit: int = 50) -> List[Dict[str, Any]]:
         """
         Get recent extraction results.
-        
+
         Args:
             limit: Maximum number of results
-            
+
         Returns:
             List of extraction result summaries
         """
@@ -447,11 +447,11 @@ class ProductDatabase:
                     ORDER BY created_at DESC
                     LIMIT ?
                 """, (limit,))
-                
+
                 results = []
                 for row in cursor.fetchall():
                     result_dict = dict(row)
-                    
+
                     # Parse JSON fields
                     if result_dict['unique_countries']:
                         result_dict['unique_countries'] = json.loads(result_dict['unique_countries'])
@@ -461,25 +461,25 @@ class ProductDatabase:
                         result_dict['errors_encountered'] = json.loads(result_dict['errors_encountered'])
                     if result_dict['warnings']:
                         result_dict['warnings'] = json.loads(result_dict['warnings'])
-                    
+
                     results.append(result_dict)
-                
+
                 return results
-                
+
         except Exception as e:
             self.logger.error(f"Failed to get extraction results: {e}")
             return []
-    
+
     def get_statistics(self) -> Dict[str, Any]:
         """Get database statistics."""
         try:
             with self.db_manager.get_connection() as conn:
                 stats = {}
-                
+
                 # Product counts
                 cursor = conn.execute("SELECT COUNT(*) FROM products")
                 stats['total_products'] = cursor.fetchone()[0]
-                
+
                 # Country distribution
                 cursor = conn.execute("""
                     SELECT origin_country, COUNT(*) as count 
@@ -489,7 +489,7 @@ class ProductDatabase:
                     ORDER BY count DESC
                 """)
                 stats['countries'] = {row[0]: row[1] for row in cursor.fetchall()}
-                
+
                 # Category distribution
                 cursor = conn.execute("""
                     SELECT category, COUNT(*) as count 
@@ -498,7 +498,7 @@ class ProductDatabase:
                     ORDER BY count DESC
                 """)
                 stats['categories'] = {row[0]: row[1] for row in cursor.fetchall()}
-                
+
                 # Confidence distribution
                 cursor = conn.execute("""
                     SELECT 
@@ -513,29 +513,29 @@ class ProductDatabase:
                     'medium': row[1], 
                     'low': row[2]
                 }
-                
+
                 # Extraction stats
                 cursor = conn.execute("SELECT COUNT(*) FROM extraction_results")
                 stats['total_extractions'] = cursor.fetchone()[0]
-                
+
                 return stats
-                
+
         except Exception as e:
             self.logger.error(f"Failed to get statistics: {e}")
             return {}
-    
+
     def _row_to_product(self, row: sqlite3.Row, uses_data: List[sqlite3.Row]) -> Optional[Product]:
         """Convert database row to Product instance."""
         try:
             from src.models import ProductOrigin, ProductUse, ProductCategory, ProcessingLevel
-            
+
             # Build origin
             origin = None
             if row['origin_country']:
                 coordinates = None
                 if row['origin_coordinates']:
                     coordinates = json.loads(row['origin_coordinates'])
-                
+
                 origin = ProductOrigin(
                     country=row['origin_country'],
                     region=row['origin_region'],
@@ -543,7 +543,7 @@ class ProductDatabase:
                     coordinates=coordinates,
                     ecosystem_type=row['origin_ecosystem']
                 )
-            
+
             # Build uses
             uses = []
             for use_row in uses_data:
@@ -556,12 +556,12 @@ class ProductDatabase:
                     sustainability_notes=use_row['sustainability_notes']
                 )
                 uses.append(use)
-            
+
             # Parse common names
             common_names = []
             if row['common_names']:
                 common_names = json.loads(row['common_names'])
-            
+
             # Create product
             product = Product(
                 id=row['id'],
@@ -578,9 +578,9 @@ class ProductDatabase:
                 created_at=datetime.fromisoformat(row['created_at']),
                 updated_at=datetime.fromisoformat(row['updated_at'])
             )
-            
+
             return product
-            
+
         except Exception as e:
             self.logger.error(f"Failed to convert row to product: {e}")
             return None

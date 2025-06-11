@@ -7,3 +7,969 @@
 2025-06-08 14:23:44,924 - src.llm.openai_client - INFO - OpenAI client initialized with model: gpt-4.1-nano-2025-04-14
 2025-06-08 14:23:46,426 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
 2025-06-08 14:23:46,427 - src.llm.openai_client - ERROR - OpenAI API error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************hqcA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-06-08 15:45:01,261 - src.utils.helpers - INFO - Logging initialized at level INFO
+2025-06-08 15:45:01,262 - src - INFO - Bioeconomic Products Analysis System v1.0.0 initialized
+2025-06-08 15:45:01,547 - src.llm.openai_client - INFO - OpenAI client initialized with model: gpt-4.1-nano-2025-04-14
+2025-06-08 15:45:11,110 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-10 17:34:00,040 - src.utils.helpers - INFO - Logging initialized at level INFO
+2025-06-10 17:34:00,042 - src - INFO - Bioeconomic Products Analysis System v1.0.0 initialized
+2025-06-10 17:34:00,356 - src.llm.openai_client - INFO - OpenAI client initialized with model: gpt-4.1-nano-2025-04-14
+2025-06-10 17:34:04,208 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-10 17:34:04,212 - src.llm.response_parser - ERROR - Failed to parse extraction response: No valid JSON found in response
+2025-06-10 17:38:40,640 - src.utils.helpers - INFO - Logging initialized at level INFO
+2025-06-10 17:38:40,640 - src - INFO - Bioeconomic Products Analysis System v1.0.0 initialized
+2025-06-10 17:38:40,911 - src.llm.openai_client - INFO - OpenAI client initialized with model: gpt-4.1-nano-2025-04-14
+2025-06-10 17:38:44,272 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-10 17:39:26,558 - src.utils.helpers - INFO - Logging initialized at level INFO
+2025-06-10 17:39:26,558 - src - INFO - Bioeconomic Products Analysis System v1.0.0 initialized
+2025-06-10 17:39:37,284 - src.llm.openai_client - INFO - OpenAI client initialized with model: gpt-4.1-nano-2025-04-14
+2025-06-11 14:14:19,644 - src.utils.helpers - INFO - Logging initialized at level INFO
+2025-06-11 14:14:19,644 - src - INFO - Bioeconomic Products Analysis System v1.0.0 initialized
+2025-06-11 14:14:25,774 - src.llm.openai_client - INFO - OpenAI client initialized with model: gpt-4.1-nano-2025-04-14
+2025-06-11 14:14:25,782 - src.storage.database - INFO - Database initialized at: C:\Repos\text-extractor\data\database\products.db
+2025-06-11 14:14:25,783 - __main__ - INFO - Found 38 files to process: 36 PDFs, 0 DOCs, 2 DOCXs
+2025-06-11 14:14:25,784 - __main__ - INFO - Processing file: PNUD_Peri_Indicador_PPS-Informe semestral 2021-1.docx
+2025-06-11 14:14:25,785 - src.llm.openai_client - INFO - Sending file PNUD_Peri_Indicador_PPS-Informe semestral 2021-1.docx directly to OpenAI API
+2025-06-11 14:14:25,785 - __main__ - INFO - Processing file: PPS-Informe semestral 2021-1.docx
+2025-06-11 14:14:26,786 - src.llm.openai_client - INFO - Sending file PPS-Informe semestral 2021-1.docx directly to OpenAI API
+2025-06-11 14:14:27,740 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:27,743 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:27,743 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:27,744 - __main__ - ERROR - Error processing PNUD_Peri_Indicador_PPS-Informe semestral 2021-1.docx: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:27,744 - __main__ - INFO - Processing file: UNDP_Peru_Paisajes_Productivos_Sostenibles_DT.pdf
+2025-06-11 14:14:27,744 - __main__ - INFO - Completed 1/38: PNUD_Peri_Indicador_PPS-Informe semestral 2021-1.docx
+2025-06-11 14:14:27,787 - src.llm.openai_client - INFO - Sending file UNDP_Peru_Paisajes_Productivos_Sostenibles_DT.pdf directly to OpenAI API
+2025-06-11 14:14:28,245 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:28,246 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:28,246 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:28,246 - __main__ - ERROR - Error processing PPS-Informe semestral 2021-1.docx: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:28,246 - __main__ - INFO - Processing file: CPI_AMAZON FOOD&FOREST_Financing Initiative.pdf
+2025-06-11 14:14:28,246 - __main__ - INFO - Completed 2/38: PPS-Informe semestral 2021-1.docx
+2025-06-11 14:14:28,789 - src.llm.openai_client - INFO - Sending file CPI_AMAZON FOOD&FOREST_Financing Initiative.pdf directly to OpenAI API
+2025-06-11 14:14:29,447 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:29,448 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:29,448 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:29,448 - __main__ - ERROR - Error processing UNDP_Peru_Paisajes_Productivos_Sostenibles_DT.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:29,448 - __main__ - INFO - Processing file: OTCA_Wakaya_Resumo-para-Tomadores-de-Decisao-Dezembro-2023-FINAL-CCC.pdf
+2025-06-11 14:14:29,448 - __main__ - INFO - Completed 3/38: UNDP_Peru_Paisajes_Productivos_Sostenibles_DT.pdf
+2025-06-11 14:14:29,789 - src.llm.openai_client - INFO - Sending file OTCA_Wakaya_Resumo-para-Tomadores-de-Decisao-Dezembro-2023-FINAL-CCC.pdf directly to OpenAI API
+2025-06-11 14:14:30,251 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:30,252 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:30,252 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:30,252 - __main__ - ERROR - Error processing CPI_AMAZON FOOD&FOREST_Financing Initiative.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:30,253 - __main__ - INFO - Processing file: UNDP_Peru-PPMProject Implementation Report PIR 2023.pdf
+2025-06-11 14:14:30,253 - __main__ - INFO - Completed 4/38: CPI_AMAZON FOOD&FOREST_Financing Initiative.pdf
+2025-06-11 14:14:30,790 - src.llm.openai_client - INFO - Sending file UNDP_Peru-PPMProject Implementation Report PIR 2023.pdf directly to OpenAI API
+2025-06-11 14:14:30,992 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:30,993 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:30,993 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:30,993 - __main__ - ERROR - Error processing OTCA_Wakaya_Resumo-para-Tomadores-de-Decisao-Dezembro-2023-FINAL-CCC.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:30,993 - __main__ - INFO - Processing file: CEPAL_Towards a sustainable bioeconomy.pdf
+2025-06-11 14:14:30,993 - __main__ - INFO - Completed 5/38: OTCA_Wakaya_Resumo-para-Tomadores-de-Decisao-Dezembro-2023-FINAL-CCC.pdf
+2025-06-11 14:14:31,791 - src.llm.openai_client - INFO - Sending file CEPAL_Towards a sustainable bioeconomy.pdf directly to OpenAI API
+2025-06-11 14:14:31,819 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:31,820 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:31,820 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:31,820 - __main__ - ERROR - Error processing UNDP_Peru-PPMProject Implementation Report PIR 2023.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:31,820 - __main__ - INFO - Processing file: CEPAL_Hacia una bioeconomía sostenible.pdf
+2025-06-11 14:14:31,820 - __main__ - INFO - Completed 6/38: UNDP_Peru-PPMProject Implementation Report PIR 2023.pdf
+2025-06-11 14:14:32,792 - src.llm.openai_client - INFO - Sending file CEPAL_Hacia una bioeconomía sostenible.pdf directly to OpenAI API
+2025-06-11 14:14:32,868 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:32,869 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:32,869 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:32,869 - __main__ - ERROR - Error processing CEPAL_Towards a sustainable bioeconomy.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:32,869 - __main__ - INFO - Processing file: CEPAL_El financiamiento da bioeconomia.pdf
+2025-06-11 14:14:32,869 - __main__ - INFO - Completed 7/38: CEPAL_Towards a sustainable bioeconomy.pdf
+2025-06-11 14:14:33,793 - src.llm.openai_client - INFO - Sending file CEPAL_El financiamiento da bioeconomia.pdf directly to OpenAI API
+2025-06-11 14:14:34,400 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:34,401 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:34,401 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:34,401 - __main__ - ERROR - Error processing CEPAL_Hacia una bioeconomía sostenible.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:34,401 - __main__ - INFO - Processing file: CEPAL_Cuentas satelite de bioeconomia.pdf
+2025-06-11 14:14:34,401 - __main__ - INFO - Completed 8/38: CEPAL_Hacia una bioeconomía sostenible.pdf
+2025-06-11 14:14:34,794 - src.llm.openai_client - INFO - Sending file CEPAL_Cuentas satelite de bioeconomia.pdf directly to OpenAI API
+2025-06-11 14:14:35,554 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:35,554 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:35,555 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:35,555 - __main__ - ERROR - Error processing CEPAL_El financiamiento da bioeconomia.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:35,555 - __main__ - INFO - Processing file: CEPAL_La bioeconomía_oportunidades y desafios.pdf
+2025-06-11 14:14:35,555 - __main__ - INFO - Completed 9/38: CEPAL_El financiamiento da bioeconomia.pdf
+2025-06-11 14:14:35,795 - src.llm.openai_client - INFO - Sending file CEPAL_La bioeconomía_oportunidades y desafios.pdf directly to OpenAI API
+2025-06-11 14:14:35,950 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:35,951 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:35,951 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:35,951 - __main__ - ERROR - Error processing CEPAL_Cuentas satelite de bioeconomia.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:35,951 - __main__ - INFO - Processing file: BIOFIN Ecuador ENG 2024_0.pdf
+2025-06-11 14:14:35,951 - __main__ - INFO - Completed 10/38: CEPAL_Cuentas satelite de bioeconomia.pdf
+2025-06-11 14:14:36,663 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:36,664 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:36,664 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:36,664 - __main__ - ERROR - Error processing CEPAL_La bioeconomía_oportunidades y desafios.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:36,664 - __main__ - INFO - Processing file: CEPAL_Nature-based Solution.pdf
+2025-06-11 14:14:36,664 - __main__ - INFO - Completed 11/38: CEPAL_La bioeconomía_oportunidades y desafios.pdf
+2025-06-11 14:14:36,796 - src.llm.openai_client - INFO - Sending file BIOFIN Ecuador ENG 2024_0.pdf directly to OpenAI API
+2025-06-11 14:14:36,796 - src.llm.openai_client - INFO - Sending file CEPAL_Nature-based Solution.pdf directly to OpenAI API
+2025-06-11 14:14:38,311 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:38,311 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:38,312 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:38,312 - __main__ - ERROR - Error processing BIOFIN Ecuador ENG 2024_0.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:38,312 - __main__ - INFO - Processing file: CEPAL_Bioeconomía en América Latina y el Caribe.pdf
+2025-06-11 14:14:38,312 - __main__ - INFO - Completed 12/38: BIOFIN Ecuador ENG 2024_0.pdf
+2025-06-11 14:14:38,312 - src.llm.openai_client - INFO - Sending file CEPAL_Bioeconomía en América Latina y el Caribe.pdf directly to OpenAI API
+2025-06-11 14:14:38,423 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:38,424 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:38,424 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:38,424 - __main__ - ERROR - Error processing CEPAL_Nature-based Solution.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:38,424 - __main__ - INFO - Processing file: Rainforest Alliance_Bioeconomy-Marketplace-Initiative.pdf
+2025-06-11 14:14:38,425 - __main__ - INFO - Completed 13/38: CEPAL_Nature-based Solution.pdf
+2025-06-11 14:14:39,313 - src.llm.openai_client - INFO - Sending file Rainforest Alliance_Bioeconomy-Marketplace-Initiative.pdf directly to OpenAI API
+2025-06-11 14:14:39,482 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:39,483 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:39,483 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:39,483 - __main__ - ERROR - Error processing CEPAL_Bioeconomía en América Latina y el Caribe.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:39,483 - __main__ - INFO - Processing file: IICA_Panorama del bioemprendimiento.pdf
+2025-06-11 14:14:39,483 - __main__ - INFO - Completed 14/38: CEPAL_Bioeconomía en América Latina y el Caribe.pdf
+2025-06-11 14:14:40,314 - src.llm.openai_client - INFO - Sending file IICA_Panorama del bioemprendimiento.pdf directly to OpenAI API
+2025-06-11 14:14:40,402 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:40,402 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:40,403 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:40,403 - __main__ - ERROR - Error processing Rainforest Alliance_Bioeconomy-Marketplace-Initiative.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:40,403 - __main__ - INFO - Processing file: CPI_The-Amazon-FoodForest-Bioeconomy-INSTRUMENT ANALYSIS.pdf
+2025-06-11 14:14:40,403 - __main__ - INFO - Completed 15/38: Rainforest Alliance_Bioeconomy-Marketplace-Initiative.pdf
+2025-06-11 14:14:41,204 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:41,205 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:41,205 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:41,205 - __main__ - ERROR - Error processing IICA_Panorama del bioemprendimiento.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:41,205 - __main__ - INFO - Processing file: UNDP_Peru_Paisajes_Productivos_Sostenibles.pdf
+2025-06-11 14:14:41,205 - __main__ - INFO - Completed 16/38: IICA_Panorama del bioemprendimiento.pdf
+2025-06-11 14:14:41,315 - src.llm.openai_client - INFO - Sending file UNDP_Peru_Paisajes_Productivos_Sostenibles.pdf directly to OpenAI API
+2025-06-11 14:14:41,315 - src.llm.openai_client - INFO - Sending file CPI_The-Amazon-FoodForest-Bioeconomy-INSTRUMENT ANALYSIS.pdf directly to OpenAI API
+2025-06-11 14:14:42,677 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:42,678 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:42,678 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:42,678 - __main__ - ERROR - Error processing CPI_The-Amazon-FoodForest-Bioeconomy-INSTRUMENT ANALYSIS.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:42,678 - __main__ - INFO - Processing file: OTCA_Wakaya_Capitulo6_v3-1.pdf
+2025-06-11 14:14:42,678 - __main__ - INFO - Completed 17/38: CPI_The-Amazon-FoodForest-Bioeconomy-INSTRUMENT ANALYSIS.pdf
+2025-06-11 14:14:42,678 - src.llm.openai_client - INFO - Sending file OTCA_Wakaya_Capitulo6_v3-1.pdf directly to OpenAI API
+2025-06-11 14:14:43,297 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:43,298 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:43,298 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:43,298 - __main__ - ERROR - Error processing UNDP_Peru_Paisajes_Productivos_Sostenibles.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:43,298 - __main__ - INFO - Processing file: Paper_CCE 2450008 Corrected (1).pdf
+2025-06-11 14:14:43,298 - __main__ - INFO - Completed 18/38: UNDP_Peru_Paisajes_Productivos_Sostenibles.pdf
+2025-06-11 14:14:43,679 - src.llm.openai_client - INFO - Sending file Paper_CCE 2450008 Corrected (1).pdf directly to OpenAI API
+2025-06-11 14:14:43,750 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:43,751 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:43,751 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:43,751 - __main__ - ERROR - Error processing OTCA_Wakaya_Capitulo6_v3-1.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:43,751 - __main__ - INFO - Processing file: LIRA_BioForestALC_Ingles.pdf
+2025-06-11 14:14:43,751 - __main__ - INFO - Completed 19/38: OTCA_Wakaya_Capitulo6_v3-1.pdf
+2025-06-11 14:14:44,681 - src.llm.openai_client - INFO - Sending file LIRA_BioForestALC_Ingles.pdf directly to OpenAI API
+2025-06-11 14:14:44,899 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:44,900 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:44,900 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:44,900 - __main__ - ERROR - Error processing Paper_CCE 2450008 Corrected (1).pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:44,900 - __main__ - INFO - Processing file: OTCA_Wakaya_Capitulo4_v3-1.pdf
+2025-06-11 14:14:44,900 - __main__ - INFO - Completed 20/38: Paper_CCE 2450008 Corrected (1).pdf
+2025-06-11 14:14:45,682 - src.llm.openai_client - INFO - Sending file OTCA_Wakaya_Capitulo4_v3-1.pdf directly to OpenAI API
+2025-06-11 14:14:46,422 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:46,423 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:46,423 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:46,423 - __main__ - ERROR - Error processing LIRA_BioForestALC_Ingles.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:46,423 - __main__ - INFO - Processing file: CEPAL_Natural Resources in Latin America.pdf
+2025-06-11 14:14:46,423 - __main__ - INFO - Completed 21/38: LIRA_BioForestALC_Ingles.pdf
+2025-06-11 14:14:46,683 - src.llm.openai_client - INFO - Sending file CEPAL_Natural Resources in Latin America.pdf directly to OpenAI API
+2025-06-11 14:14:47,185 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:47,185 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:47,186 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:47,186 - __main__ - ERROR - Error processing OTCA_Wakaya_Capitulo4_v3-1.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:47,186 - __main__ - INFO - Processing file: OTCA_Wakaya_Capitulo5_v3-1.pdf
+2025-06-11 14:14:47,186 - __main__ - INFO - Completed 22/38: OTCA_Wakaya_Capitulo4_v3-1.pdf
+2025-06-11 14:14:47,684 - src.llm.openai_client - INFO - Sending file OTCA_Wakaya_Capitulo5_v3-1.pdf directly to OpenAI API
+2025-06-11 14:14:48,066 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:48,067 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:48,067 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:48,067 - __main__ - ERROR - Error processing CEPAL_Natural Resources in Latin America.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:48,067 - __main__ - INFO - Processing file: UNDP_Colombia_Col_MED_Usos_Biodiversidad.pdf
+2025-06-11 14:14:48,067 - __main__ - INFO - Completed 23/38: CEPAL_Natural Resources in Latin America.pdf
+2025-06-11 14:14:48,684 - src.llm.openai_client - INFO - Sending file UNDP_Colombia_Col_MED_Usos_Biodiversidad.pdf directly to OpenAI API
+2025-06-11 14:14:49,515 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:49,515 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:49,515 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:49,515 - __main__ - ERROR - Error processing OTCA_Wakaya_Capitulo5_v3-1.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:49,516 - __main__ - INFO - Processing file: Corazon_Amazonia_Caquetá 08_05_2020.pdf
+2025-06-11 14:14:49,685 - src.llm.openai_client - INFO - Sending file Corazon_Amazonia_Caquetá 08_05_2020.pdf directly to OpenAI API
+2025-06-11 14:14:50,173 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:50,173 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:50,174 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:50,174 - __main__ - ERROR - Error processing UNDP_Colombia_Col_MED_Usos_Biodiversidad.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:50,174 - __main__ - INFO - Processing file: BIOFIN_Colombia__PATRIMONIO_NATURAL_Y_DESARROLLO_VF (2).pdf
+2025-06-11 14:14:50,686 - src.llm.openai_client - INFO - Sending file BIOFIN_Colombia__PATRIMONIO_NATURAL_Y_DESARROLLO_VF (2).pdf directly to OpenAI API
+2025-06-11 14:14:52,117 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:52,117 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:52,118 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:52,118 - __main__ - ERROR - Error processing BIOFIN_Colombia__PATRIMONIO_NATURAL_Y_DESARROLLO_VF (2).pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:52,118 - __main__ - INFO - Processing file: BIOFIN_Colombia_EMPRESA_Y_BIODIVERSIDAD_VF (1).pdf
+2025-06-11 14:14:52,118 - src.llm.openai_client - INFO - Sending file BIOFIN_Colombia_EMPRESA_Y_BIODIVERSIDAD_VF (1).pdf directly to OpenAI API
+2025-06-11 14:14:52,301 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:52,301 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:52,302 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:52,302 - __main__ - ERROR - Error processing Corazon_Amazonia_Caquetá 08_05_2020.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:52,302 - __main__ - INFO - Processing file: OTCA_Wakaya_Capitulo2_v3-1.pdf
+2025-06-11 14:14:53,119 - src.llm.openai_client - INFO - Sending file OTCA_Wakaya_Capitulo2_v3-1.pdf directly to OpenAI API
+2025-06-11 14:14:54,265 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:54,266 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:54,266 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:54,266 - __main__ - ERROR - Error processing BIOFIN_Colombia_EMPRESA_Y_BIODIVERSIDAD_VF (1).pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:54,266 - __main__ - INFO - Processing file: Corazon_Amazonia_Cadena Forestal.pdf
+2025-06-11 14:14:54,266 - src.llm.openai_client - INFO - Sending file Corazon_Amazonia_Cadena Forestal.pdf directly to OpenAI API
+2025-06-11 14:14:56,147 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:56,148 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:56,148 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:56,148 - __main__ - ERROR - Error processing Corazon_Amazonia_Cadena Forestal.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:56,148 - __main__ - INFO - Processing file: OTCA_Wakaya_Capitulo3_v3-1.pdf
+2025-06-11 14:14:56,148 - src.llm.openai_client - INFO - Sending file OTCA_Wakaya_Capitulo3_v3-1.pdf directly to OpenAI API
+2025-06-11 14:14:58,230 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:58,231 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:58,232 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:58,232 - __main__ - ERROR - Error processing OTCA_Wakaya_Capitulo3_v3-1.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:58,232 - __main__ - INFO - Processing file: UNDP_Peru_ValoracionEconomicaBiodiversidadInforme.pdf
+2025-06-11 14:14:58,232 - src.llm.openai_client - INFO - Sending file UNDP_Peru_ValoracionEconomicaBiodiversidadInforme.pdf directly to OpenAI API
+2025-06-11 14:14:59,357 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:14:59,357 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:59,357 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:14:59,358 - __main__ - ERROR - Error processing OTCA_Wakaya_Capitulo2_v3-1.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:14:59,358 - __main__ - INFO - Processing file: Corazon_Amazonia_Emprendimientos Amazónicos_2020.pdf
+2025-06-11 14:14:59,358 - src.llm.openai_client - INFO - Sending file Corazon_Amazonia_Emprendimientos Amazónicos_2020.pdf directly to OpenAI API
+2025-06-11 14:15:00,692 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:15:00,692 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:15:00,693 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:15:00,693 - __main__ - ERROR - Error processing UNDP_Peru_ValoracionEconomicaBiodiversidadInforme.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:15:00,693 - __main__ - INFO - Processing file: CATIE_Bioeconomía de los productos .pdf
+2025-06-11 14:15:00,693 - src.llm.openai_client - INFO - Sending file CATIE_Bioeconomía de los productos .pdf directly to OpenAI API
+2025-06-11 14:15:04,033 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:15:04,034 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:15:04,034 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:15:04,034 - __main__ - ERROR - Error processing CATIE_Bioeconomía de los productos .pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:15:04,034 - __main__ - INFO - Processing file: IICA_Informe_Situacion_Perspectivas.pdf
+2025-06-11 14:15:04,034 - src.llm.openai_client - INFO - Sending file IICA_Informe_Situacion_Perspectivas.pdf directly to OpenAI API
+2025-06-11 14:15:04,909 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:15:04,910 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:15:04,910 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:15:04,910 - __main__ - ERROR - Error processing Corazon_Amazonia_Emprendimientos Amazónicos_2020.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:15:04,910 - __main__ - INFO - Processing file: Corazon_Amazonia_PPMProject Implementation Report PIR 2023.pdf
+2025-06-11 14:15:05,034 - src.llm.openai_client - INFO - Sending file Corazon_Amazonia_PPMProject Implementation Report PIR 2023.pdf directly to OpenAI API
+2025-06-11 14:15:07,849 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:15:07,850 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:15:07,850 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:15:07,850 - __main__ - ERROR - Error processing IICA_Informe_Situacion_Perspectivas.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:15:07,850 - __main__ - INFO - Processing file: BIOFIN Peru - Sintesis Fase I.pdf
+2025-06-11 14:15:07,850 - src.llm.openai_client - INFO - Sending file BIOFIN Peru - Sintesis Fase I.pdf directly to OpenAI API
+2025-06-11 14:15:11,044 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:15:11,045 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:15:11,045 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:15:11,046 - __main__ - ERROR - Error processing Corazon_Amazonia_PPMProject Implementation Report PIR 2023.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:15:11,046 - __main__ - INFO - Processing file: IICA_IPAM-Bioeconomia-Amazonia.pdf
+2025-06-11 14:15:11,046 - src.llm.openai_client - INFO - Sending file IICA_IPAM-Bioeconomia-Amazonia.pdf directly to OpenAI API
+2025-06-11 14:15:14,257 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:15:14,258 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:15:14,258 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:15:14,258 - __main__ - ERROR - Error processing BIOFIN Peru - Sintesis Fase I.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:15:23,986 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:15:23,987 - src.llm.openai_client - ERROR - Unexpected error in file completion: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:15:23,987 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 274, in file_completion
+    assistant = self.client.beta.assistants.create(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Assistants.create() got an unexpected keyword argument 'file_ids'
+
+2025-06-11 14:15:23,987 - __main__ - ERROR - Error processing IICA_IPAM-Bioeconomia-Amazonia.pdf: File completion failed: Assistants.create() got an unexpected keyword argument 'file_ids'
+2025-06-11 14:18:54,288 - src.utils.helpers - INFO - Logging initialized at level INFO
+2025-06-11 14:18:54,288 - src - INFO - Bioeconomic Products Analysis System v1.0.0 initialized
+2025-06-11 14:18:58,390 - src.llm.openai_client - INFO - OpenAI client initialized with model: gpt-4.1-nano-2025-04-14
+2025-06-11 14:18:58,391 - src.storage.database - INFO - Database initialized at: C:\Repos\text-extractor\data\database\products.db
+2025-06-11 14:18:58,392 - __main__ - INFO - Found 38 files to process: 36 PDFs, 0 DOCs, 2 DOCXs
+2025-06-11 14:18:58,393 - __main__ - INFO - Processing file: PNUD_Peri_Indicador_PPS-Informe semestral 2021-1.docx
+2025-06-11 14:18:58,394 - src.llm.openai_client - INFO - Sending file PNUD_Peri_Indicador_PPS-Informe semestral 2021-1.docx directly to OpenAI API
+2025-06-11 14:18:58,394 - __main__ - INFO - Processing file: PPS-Informe semestral 2021-1.docx
+2025-06-11 14:18:59,395 - src.llm.openai_client - INFO - Sending file PPS-Informe semestral 2021-1.docx directly to OpenAI API
+2025-06-11 14:19:00,395 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:00,837 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:01,190 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:01,196 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:01,197 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:01,197 - __main__ - ERROR - Error processing PNUD_Peri_Indicador_PPS-Informe semestral 2021-1.docx: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:01,197 - __main__ - INFO - Processing file: UNDP_Peru_Paisajes_Productivos_Sostenibles_DT.pdf
+2025-06-11 14:19:01,197 - __main__ - INFO - Completed 1/38: PNUD_Peri_Indicador_PPS-Informe semestral 2021-1.docx
+2025-06-11 14:19:01,197 - src.llm.openai_client - INFO - Sending file UNDP_Peru_Paisajes_Productivos_Sostenibles_DT.pdf directly to OpenAI API
+2025-06-11 14:19:02,017 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:02,019 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:02,020 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:02,020 - __main__ - ERROR - Error processing PPS-Informe semestral 2021-1.docx: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:02,020 - __main__ - INFO - Processing file: CPI_AMAZON FOOD&FOREST_Financing Initiative.pdf
+2025-06-11 14:19:02,020 - __main__ - INFO - Completed 2/38: PPS-Informe semestral 2021-1.docx
+2025-06-11 14:19:02,198 - src.llm.openai_client - INFO - Sending file CPI_AMAZON FOOD&FOREST_Financing Initiative.pdf directly to OpenAI API
+2025-06-11 14:19:02,446 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:03,464 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:03,465 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:03,466 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:03,466 - __main__ - ERROR - Error processing UNDP_Peru_Paisajes_Productivos_Sostenibles_DT.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:03,466 - __main__ - INFO - Processing file: OTCA_Wakaya_Resumo-para-Tomadores-de-Decisao-Dezembro-2023-FINAL-CCC.pdf
+2025-06-11 14:19:03,466 - __main__ - INFO - Completed 3/38: UNDP_Peru_Paisajes_Productivos_Sostenibles_DT.pdf
+2025-06-11 14:19:03,466 - src.llm.openai_client - INFO - Sending file OTCA_Wakaya_Resumo-para-Tomadores-de-Decisao-Dezembro-2023-FINAL-CCC.pdf directly to OpenAI API
+2025-06-11 14:19:03,908 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:04,495 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:04,496 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:04,497 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:04,497 - __main__ - ERROR - Error processing CPI_AMAZON FOOD&FOREST_Financing Initiative.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:04,497 - __main__ - INFO - Processing file: UNDP_Peru-PPMProject Implementation Report PIR 2023.pdf
+2025-06-11 14:19:04,497 - __main__ - INFO - Completed 4/38: CPI_AMAZON FOOD&FOREST_Financing Initiative.pdf
+2025-06-11 14:19:04,497 - src.llm.openai_client - INFO - Sending file UNDP_Peru-PPMProject Implementation Report PIR 2023.pdf directly to OpenAI API
+2025-06-11 14:19:04,892 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:05,379 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:05,379 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:05,380 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:05,380 - __main__ - ERROR - Error processing OTCA_Wakaya_Resumo-para-Tomadores-de-Decisao-Dezembro-2023-FINAL-CCC.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:05,380 - __main__ - INFO - Processing file: CEPAL_Towards a sustainable bioeconomy.pdf
+2025-06-11 14:19:05,380 - __main__ - INFO - Completed 5/38: OTCA_Wakaya_Resumo-para-Tomadores-de-Decisao-Dezembro-2023-FINAL-CCC.pdf
+2025-06-11 14:19:05,498 - src.llm.openai_client - INFO - Sending file CEPAL_Towards a sustainable bioeconomy.pdf directly to OpenAI API
+2025-06-11 14:19:06,214 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:06,261 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:06,803 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:06,804 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:06,804 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:06,804 - __main__ - ERROR - Error processing UNDP_Peru-PPMProject Implementation Report PIR 2023.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:06,804 - __main__ - INFO - Processing file: CEPAL_Hacia una bioeconomía sostenible.pdf
+2025-06-11 14:19:06,804 - __main__ - INFO - Completed 6/38: UNDP_Peru-PPMProject Implementation Report PIR 2023.pdf
+2025-06-11 14:19:06,805 - src.llm.openai_client - INFO - Sending file CEPAL_Hacia una bioeconomía sostenible.pdf directly to OpenAI API
+2025-06-11 14:19:06,820 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:06,821 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:06,822 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:06,822 - __main__ - ERROR - Error processing CEPAL_Towards a sustainable bioeconomy.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:06,822 - __main__ - INFO - Processing file: CEPAL_El financiamiento da bioeconomia.pdf
+2025-06-11 14:19:06,822 - __main__ - INFO - Completed 7/38: CEPAL_Towards a sustainable bioeconomy.pdf
+2025-06-11 14:19:07,606 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:07,806 - src.llm.openai_client - INFO - Sending file CEPAL_El financiamiento da bioeconomia.pdf directly to OpenAI API
+2025-06-11 14:19:08,375 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:08,376 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:08,377 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:08,377 - __main__ - ERROR - Error processing CEPAL_Hacia una bioeconomía sostenible.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:08,377 - __main__ - INFO - Processing file: CEPAL_Cuentas satelite de bioeconomia.pdf
+2025-06-11 14:19:08,377 - __main__ - INFO - Completed 8/38: CEPAL_Hacia una bioeconomía sostenible.pdf
+2025-06-11 14:19:08,807 - src.llm.openai_client - INFO - Sending file CEPAL_Cuentas satelite de bioeconomia.pdf directly to OpenAI API
+2025-06-11 14:19:08,848 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:09,745 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:09,783 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:09,783 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:09,784 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:09,784 - __main__ - ERROR - Error processing CEPAL_El financiamiento da bioeconomia.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:09,784 - __main__ - INFO - Processing file: CEPAL_La bioeconomía_oportunidades y desafios.pdf
+2025-06-11 14:19:09,784 - __main__ - INFO - Completed 9/38: CEPAL_El financiamiento da bioeconomia.pdf
+2025-06-11 14:19:09,808 - src.llm.openai_client - INFO - Sending file CEPAL_La bioeconomía_oportunidades y desafios.pdf directly to OpenAI API
+2025-06-11 14:19:10,617 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:11,137 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:11,138 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:11,139 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:11,139 - __main__ - ERROR - Error processing CEPAL_Cuentas satelite de bioeconomia.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:11,139 - __main__ - INFO - Processing file: BIOFIN Ecuador ENG 2024_0.pdf
+2025-06-11 14:19:11,139 - __main__ - INFO - Completed 10/38: CEPAL_Cuentas satelite de bioeconomia.pdf
+2025-06-11 14:19:11,139 - src.llm.openai_client - INFO - Sending file BIOFIN Ecuador ENG 2024_0.pdf directly to OpenAI API
+2025-06-11 14:19:11,279 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:11,280 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:11,281 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:11,281 - __main__ - ERROR - Error processing CEPAL_La bioeconomía_oportunidades y desafios.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:11,281 - __main__ - INFO - Processing file: CEPAL_Nature-based Solution.pdf
+2025-06-11 14:19:11,281 - __main__ - INFO - Completed 11/38: CEPAL_La bioeconomía_oportunidades y desafios.pdf
+2025-06-11 14:19:12,025 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:12,140 - src.llm.openai_client - INFO - Sending file CEPAL_Nature-based Solution.pdf directly to OpenAI API
+2025-06-11 14:19:12,554 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:12,555 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:12,556 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:12,556 - __main__ - ERROR - Error processing BIOFIN Ecuador ENG 2024_0.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:12,556 - __main__ - INFO - Processing file: CEPAL_Bioeconomía en América Latina y el Caribe.pdf
+2025-06-11 14:19:12,556 - __main__ - INFO - Completed 12/38: BIOFIN Ecuador ENG 2024_0.pdf
+2025-06-11 14:19:13,141 - src.llm.openai_client - INFO - Sending file CEPAL_Bioeconomía en América Latina y el Caribe.pdf directly to OpenAI API
+2025-06-11 14:19:13,799 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:14,325 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:14,326 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:14,326 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:14,327 - __main__ - ERROR - Error processing CEPAL_Nature-based Solution.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:14,327 - __main__ - INFO - Processing file: Rainforest Alliance_Bioeconomy-Marketplace-Initiative.pdf
+2025-06-11 14:19:14,327 - src.llm.openai_client - INFO - Sending file Rainforest Alliance_Bioeconomy-Marketplace-Initiative.pdf directly to OpenAI API
+2025-06-11 14:19:14,327 - __main__ - INFO - Completed 13/38: CEPAL_Nature-based Solution.pdf
+2025-06-11 14:19:14,866 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:15,171 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:15,442 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:15,442 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:15,443 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:15,443 - __main__ - ERROR - Error processing CEPAL_Bioeconomía en América Latina y el Caribe.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:15,443 - __main__ - INFO - Processing file: IICA_Panorama del bioemprendimiento.pdf
+2025-06-11 14:19:15,443 - __main__ - INFO - Completed 14/38: CEPAL_Bioeconomía en América Latina y el Caribe.pdf
+2025-06-11 14:19:15,443 - src.llm.openai_client - INFO - Sending file IICA_Panorama del bioemprendimiento.pdf directly to OpenAI API
+2025-06-11 14:19:15,744 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:15,745 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:15,746 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:15,746 - __main__ - ERROR - Error processing Rainforest Alliance_Bioeconomy-Marketplace-Initiative.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:15,746 - __main__ - INFO - Processing file: CPI_The-Amazon-FoodForest-Bioeconomy-INSTRUMENT ANALYSIS.pdf
+2025-06-11 14:19:15,746 - __main__ - INFO - Completed 15/38: Rainforest Alliance_Bioeconomy-Marketplace-Initiative.pdf
+2025-06-11 14:19:16,377 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:16,445 - src.llm.openai_client - INFO - Sending file CPI_The-Amazon-FoodForest-Bioeconomy-INSTRUMENT ANALYSIS.pdf directly to OpenAI API
+2025-06-11 14:19:16,912 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:16,913 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:16,913 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:16,913 - __main__ - ERROR - Error processing IICA_Panorama del bioemprendimiento.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:16,913 - __main__ - INFO - Processing file: UNDP_Peru_Paisajes_Productivos_Sostenibles.pdf
+2025-06-11 14:19:16,914 - __main__ - INFO - Completed 16/38: IICA_Panorama del bioemprendimiento.pdf
+2025-06-11 14:19:17,446 - src.llm.openai_client - INFO - Sending file UNDP_Peru_Paisajes_Productivos_Sostenibles.pdf directly to OpenAI API
+2025-06-11 14:19:17,974 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:18,528 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:18,529 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:18,529 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:18,529 - __main__ - ERROR - Error processing CPI_The-Amazon-FoodForest-Bioeconomy-INSTRUMENT ANALYSIS.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:18,530 - __main__ - INFO - Processing file: OTCA_Wakaya_Capitulo6_v3-1.pdf
+2025-06-11 14:19:18,530 - __main__ - INFO - Completed 17/38: CPI_The-Amazon-FoodForest-Bioeconomy-INSTRUMENT ANALYSIS.pdf
+2025-06-11 14:19:18,530 - src.llm.openai_client - INFO - Sending file OTCA_Wakaya_Capitulo6_v3-1.pdf directly to OpenAI API
+2025-06-11 14:19:18,971 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:19,579 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:19,580 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:19,581 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:19,581 - __main__ - ERROR - Error processing UNDP_Peru_Paisajes_Productivos_Sostenibles.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:19,581 - __main__ - INFO - Processing file: Paper_CCE 2450008 Corrected (1).pdf
+2025-06-11 14:19:19,581 - src.llm.openai_client - INFO - Sending file Paper_CCE 2450008 Corrected (1).pdf directly to OpenAI API
+2025-06-11 14:19:19,581 - __main__ - INFO - Completed 18/38: UNDP_Peru_Paisajes_Productivos_Sostenibles.pdf
+2025-06-11 14:19:20,130 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:20,598 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:20,599 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:20,600 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:20,600 - __main__ - ERROR - Error processing OTCA_Wakaya_Capitulo6_v3-1.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:20,600 - __main__ - INFO - Processing file: LIRA_BioForestALC_Ingles.pdf
+2025-06-11 14:19:20,600 - __main__ - INFO - Completed 19/38: OTCA_Wakaya_Capitulo6_v3-1.pdf
+2025-06-11 14:19:20,600 - src.llm.openai_client - INFO - Sending file LIRA_BioForestALC_Ingles.pdf directly to OpenAI API
+2025-06-11 14:19:21,175 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:21,667 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:21,667 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:21,668 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:21,668 - __main__ - ERROR - Error processing Paper_CCE 2450008 Corrected (1).pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:21,668 - __main__ - INFO - Processing file: OTCA_Wakaya_Capitulo4_v3-1.pdf
+2025-06-11 14:19:21,668 - src.llm.openai_client - INFO - Sending file OTCA_Wakaya_Capitulo4_v3-1.pdf directly to OpenAI API
+2025-06-11 14:19:21,668 - __main__ - INFO - Completed 20/38: Paper_CCE 2450008 Corrected (1).pdf
+2025-06-11 14:19:22,184 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:22,989 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:23,076 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:23,077 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:23,077 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:23,077 - __main__ - ERROR - Error processing LIRA_BioForestALC_Ingles.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:23,077 - __main__ - INFO - Processing file: CEPAL_Natural Resources in Latin America.pdf
+2025-06-11 14:19:23,077 - __main__ - INFO - Completed 21/38: LIRA_BioForestALC_Ingles.pdf
+2025-06-11 14:19:23,078 - src.llm.openai_client - INFO - Sending file CEPAL_Natural Resources in Latin America.pdf directly to OpenAI API
+2025-06-11 14:19:23,440 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:23,440 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:23,442 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:23,442 - __main__ - ERROR - Error processing OTCA_Wakaya_Capitulo4_v3-1.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:23,442 - __main__ - INFO - Processing file: OTCA_Wakaya_Capitulo5_v3-1.pdf
+2025-06-11 14:19:23,442 - __main__ - INFO - Completed 22/38: OTCA_Wakaya_Capitulo4_v3-1.pdf
+2025-06-11 14:19:24,078 - src.llm.openai_client - INFO - Sending file OTCA_Wakaya_Capitulo5_v3-1.pdf directly to OpenAI API
+2025-06-11 14:19:24,622 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:25,174 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:25,174 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:25,176 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:25,176 - __main__ - ERROR - Error processing CEPAL_Natural Resources in Latin America.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:25,176 - __main__ - INFO - Processing file: UNDP_Colombia_Col_MED_Usos_Biodiversidad.pdf
+2025-06-11 14:19:25,176 - __main__ - INFO - Completed 23/38: CEPAL_Natural Resources in Latin America.pdf
+2025-06-11 14:19:25,176 - src.llm.openai_client - INFO - Sending file UNDP_Colombia_Col_MED_Usos_Biodiversidad.pdf directly to OpenAI API
+2025-06-11 14:19:26,801 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:27,219 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:27,457 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:27,458 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:27,459 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:27,459 - __main__ - ERROR - Error processing OTCA_Wakaya_Capitulo5_v3-1.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:27,459 - __main__ - INFO - Processing file: Corazon_Amazonia_Caquetá 08_05_2020.pdf
+2025-06-11 14:19:27,459 - __main__ - INFO - Completed 24/38: OTCA_Wakaya_Capitulo5_v3-1.pdf
+2025-06-11 14:19:27,459 - src.llm.openai_client - INFO - Sending file Corazon_Amazonia_Caquetá 08_05_2020.pdf directly to OpenAI API
+2025-06-11 14:19:27,981 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:27,982 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:27,982 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:27,982 - __main__ - ERROR - Error processing UNDP_Colombia_Col_MED_Usos_Biodiversidad.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:27,982 - __main__ - INFO - Processing file: BIOFIN_Colombia__PATRIMONIO_NATURAL_Y_DESARROLLO_VF (2).pdf
+2025-06-11 14:19:27,982 - __main__ - INFO - Completed 25/38: UNDP_Colombia_Col_MED_Usos_Biodiversidad.pdf
+2025-06-11 14:19:28,461 - src.llm.openai_client - INFO - Sending file BIOFIN_Colombia__PATRIMONIO_NATURAL_Y_DESARROLLO_VF (2).pdf directly to OpenAI API
+2025-06-11 14:19:28,735 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:29,446 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:29,447 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:29,447 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:29,447 - __main__ - ERROR - Error processing Corazon_Amazonia_Caquetá 08_05_2020.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:29,447 - __main__ - INFO - Processing file: BIOFIN_Colombia_EMPRESA_Y_BIODIVERSIDAD_VF (1).pdf
+2025-06-11 14:19:29,448 - __main__ - INFO - Completed 26/38: Corazon_Amazonia_Caquetá 08_05_2020.pdf
+2025-06-11 14:19:29,462 - src.llm.openai_client - INFO - Sending file BIOFIN_Colombia_EMPRESA_Y_BIODIVERSIDAD_VF (1).pdf directly to OpenAI API
+2025-06-11 14:19:29,796 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:30,493 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:30,494 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:30,494 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:30,494 - __main__ - ERROR - Error processing BIOFIN_Colombia__PATRIMONIO_NATURAL_Y_DESARROLLO_VF (2).pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:30,495 - __main__ - INFO - Processing file: OTCA_Wakaya_Capitulo2_v3-1.pdf
+2025-06-11 14:19:30,495 - __main__ - INFO - Completed 27/38: BIOFIN_Colombia__PATRIMONIO_NATURAL_Y_DESARROLLO_VF (2).pdf
+2025-06-11 14:19:30,495 - src.llm.openai_client - INFO - Sending file OTCA_Wakaya_Capitulo2_v3-1.pdf directly to OpenAI API
+2025-06-11 14:19:31,384 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:31,934 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:31,935 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:31,935 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:31,935 - __main__ - ERROR - Error processing BIOFIN_Colombia_EMPRESA_Y_BIODIVERSIDAD_VF (1).pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:31,936 - __main__ - INFO - Processing file: Corazon_Amazonia_Cadena Forestal.pdf
+2025-06-11 14:19:31,936 - __main__ - INFO - Completed 28/38: BIOFIN_Colombia_EMPRESA_Y_BIODIVERSIDAD_VF (1).pdf
+2025-06-11 14:19:31,936 - src.llm.openai_client - INFO - Sending file Corazon_Amazonia_Cadena Forestal.pdf directly to OpenAI API
+2025-06-11 14:19:32,353 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:33,087 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:33,093 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:33,093 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:33,093 - __main__ - ERROR - Error processing OTCA_Wakaya_Capitulo2_v3-1.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:33,093 - __main__ - INFO - Processing file: OTCA_Wakaya_Capitulo3_v3-1.pdf
+2025-06-11 14:19:33,093 - __main__ - INFO - Completed 29/38: OTCA_Wakaya_Capitulo2_v3-1.pdf
+2025-06-11 14:19:33,094 - src.llm.openai_client - INFO - Sending file OTCA_Wakaya_Capitulo3_v3-1.pdf directly to OpenAI API
+2025-06-11 14:19:34,313 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:34,835 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:35,008 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:35,009 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:35,009 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:35,009 - __main__ - ERROR - Error processing Corazon_Amazonia_Cadena Forestal.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:35,009 - __main__ - INFO - Processing file: UNDP_Peru_ValoracionEconomicaBiodiversidadInforme.pdf
+2025-06-11 14:19:35,009 - __main__ - INFO - Completed 30/38: Corazon_Amazonia_Cadena Forestal.pdf
+2025-06-11 14:19:35,010 - src.llm.openai_client - INFO - Sending file UNDP_Peru_ValoracionEconomicaBiodiversidadInforme.pdf directly to OpenAI API
+2025-06-11 14:19:35,475 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:35,476 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:35,477 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:35,477 - __main__ - ERROR - Error processing OTCA_Wakaya_Capitulo3_v3-1.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:35,477 - __main__ - INFO - Processing file: Corazon_Amazonia_Emprendimientos Amazónicos_2020.pdf
+2025-06-11 14:19:35,477 - __main__ - INFO - Completed 31/38: OTCA_Wakaya_Capitulo3_v3-1.pdf
+2025-06-11 14:19:36,010 - src.llm.openai_client - INFO - Sending file Corazon_Amazonia_Emprendimientos Amazónicos_2020.pdf directly to OpenAI API
+2025-06-11 14:19:37,932 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:38,563 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:38,563 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:38,564 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:38,564 - __main__ - ERROR - Error processing UNDP_Peru_ValoracionEconomicaBiodiversidadInforme.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:38,564 - __main__ - INFO - Processing file: CATIE_Bioeconomía de los productos .pdf
+2025-06-11 14:19:38,564 - __main__ - INFO - Completed 32/38: UNDP_Peru_ValoracionEconomicaBiodiversidadInforme.pdf
+2025-06-11 14:19:38,564 - src.llm.openai_client - INFO - Sending file CATIE_Bioeconomía de los productos .pdf directly to OpenAI API
+2025-06-11 14:19:38,794 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:39,512 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:39,513 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:39,513 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:39,514 - __main__ - ERROR - Error processing Corazon_Amazonia_Emprendimientos Amazónicos_2020.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:39,514 - __main__ - INFO - Processing file: IICA_Informe_Situacion_Perspectivas.pdf
+2025-06-11 14:19:39,514 - __main__ - INFO - Completed 33/38: Corazon_Amazonia_Emprendimientos Amazónicos_2020.pdf
+2025-06-11 14:19:39,565 - src.llm.openai_client - INFO - Sending file IICA_Informe_Situacion_Perspectivas.pdf directly to OpenAI API
+2025-06-11 14:19:41,732 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:43,196 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:43,674 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:43,692 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:43,693 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:43,693 - __main__ - ERROR - Error processing CATIE_Bioeconomía de los productos .pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:43,693 - __main__ - INFO - Processing file: Corazon_Amazonia_PPMProject Implementation Report PIR 2023.pdf
+2025-06-11 14:19:43,693 - __main__ - INFO - Completed 34/38: CATIE_Bioeconomía de los productos .pdf
+2025-06-11 14:19:43,693 - src.llm.openai_client - INFO - Sending file Corazon_Amazonia_PPMProject Implementation Report PIR 2023.pdf directly to OpenAI API
+2025-06-11 14:19:43,723 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:43,725 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:43,726 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:43,726 - __main__ - ERROR - Error processing IICA_Informe_Situacion_Perspectivas.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:43,726 - __main__ - INFO - Processing file: BIOFIN Peru - Sintesis Fase I.pdf
+2025-06-11 14:19:43,726 - __main__ - INFO - Completed 35/38: IICA_Informe_Situacion_Perspectivas.pdf
+2025-06-11 14:19:44,693 - src.llm.openai_client - INFO - Sending file BIOFIN Peru - Sintesis Fase I.pdf directly to OpenAI API
+2025-06-11 14:19:48,914 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:49,414 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:49,415 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:49,416 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:49,416 - __main__ - ERROR - Error processing Corazon_Amazonia_PPMProject Implementation Report PIR 2023.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:49,416 - __main__ - INFO - Processing file: IICA_IPAM-Bioeconomia-Amazonia.pdf
+2025-06-11 14:19:49,416 - __main__ - INFO - Completed 36/38: Corazon_Amazonia_PPMProject Implementation Report PIR 2023.pdf
+2025-06-11 14:19:49,416 - src.llm.openai_client - INFO - Sending file IICA_IPAM-Bioeconomia-Amazonia.pdf directly to OpenAI API
+2025-06-11 14:19:51,682 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:19:52,383 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:19:52,383 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:52,383 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:19:52,383 - __main__ - ERROR - Error processing BIOFIN Peru - Sintesis Fase I.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:19:52,383 - __main__ - INFO - Completed 37/38: BIOFIN Peru - Sintesis Fase I.pdf
+2025-06-11 14:20:01,801 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-06-11 14:20:02,382 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
+2025-06-11 14:20:02,383 - src.llm.openai_client - ERROR - Unexpected error in file completion: 'Assistants' object has no attribute 'files'
+2025-06-11 14:20:02,383 - src.llm.openai_client - ERROR - Traceback (most recent call last):
+  File "C:\Repos\text-extractor\src\llm\openai_client.py", line 282, in file_completion
+    self.client.beta.assistants.files.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Assistants' object has no attribute 'files'
+
+2025-06-11 14:20:02,383 - __main__ - ERROR - Error processing IICA_IPAM-Bioeconomia-Amazonia.pdf: File completion failed: 'Assistants' object has no attribute 'files'
+2025-06-11 14:20:02,383 - __main__ - INFO - Completed 38/38: IICA_IPAM-Bioeconomia-Amazonia.pdf
+2025-06-11 14:20:02,385 - __main__ - INFO - Batch processing complete. Results saved to C:\Repos\text-extractor\data\output\direct_batch_results.json
+2025-06-11 14:20:02,385 - __main__ - INFO - Processed 0/38 files successfully
+2025-06-11 14:20:02,385 - __main__ - INFO - Found 0 products in total
+2025-06-11 14:20:02,385 - __main__ - INFO - Total cost: $0.0000
+2025-06-11 14:20:02,385 - __main__ - INFO - Total time: 63.99 seconds

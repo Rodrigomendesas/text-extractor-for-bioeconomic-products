@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520ae608-0e14-47f4-8821-3a82b5451a51" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/data/database/products.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/output/direct_batch_results.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/direct_batch_process.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/direct_pdf_workflow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/bioeconomy_marketplace_products.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/bioeconomy_marketplace_products.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/bioeconomic_analysis.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/bioeconomic_analysis.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/data/output/teste_client_workflow.json" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/data/output/teste_client_workflow.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/logs/bioeconomic_analysis.log" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/logs/bioeconomic_analysis.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/text_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/text_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/llm/openai_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/llm/openai_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/llm/prompt_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/llm/prompt_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/llm/response_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/llm/response_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/storage/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/storage/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/storage/export_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/storage/export_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,25 +49,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.text_client_workflow.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Repos/text-extractor/tests",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.documentation.PythonDocumentationConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.direct_batch_process.executor&quot;: &quot;Run&quot;,
+    &quot;Python.text_client_workflow.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Repos/text-extractor/tests&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Repos\text-extractor\tests" />
@@ -64,7 +81,30 @@
       <recent name="C:\Repos\text-extractor" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.direct_batch_process">
+    <configuration name="direct_batch_process" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="text-extractor" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/direct_batch_process.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="text_client_workflow" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="text-extractor" />
       <option name="ENV_FILES" value="" />
@@ -90,6 +130,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.direct_batch_process" />
         <item itemvalue="Python.text_client_workflow" />
       </list>
     </recent_temporary>
@@ -110,7 +151,11 @@
       <option name="presentableId" value="Default" />
       <updated>1749136968840</updated>
       <workItem from="1749397637864" duration="4769000" />
-      <workItem from="1749402664971" duration="705000" />
+      <workItem from="1749402664971" duration="5333000" />
+      <workItem from="1749586387629" duration="391000" />
+      <workItem from="1749586809269" duration="1889000" />
+      <workItem from="1749651391710" duration="5543000" />
+      <workItem from="1749661706870" duration="9897000" />
     </task>
     <servers />
   </component>
@@ -118,6 +163,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/text_extractor$text_client_workflow.coverage" NAME="text_client_workflow Coverage Results" MODIFIED="1749401964547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
+    <SUITE FILE_PATH="coverage/text_extractor$direct_batch_process.coverage" NAME="direct_batch_process Coverage Results" MODIFIED="1749662333181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
+    <SUITE FILE_PATH="coverage/text_extractor$text_client_workflow.coverage" NAME="text_client_workflow Coverage Results" MODIFIED="1749587919557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
   </component>
 </project>

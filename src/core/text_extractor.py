@@ -3,12 +3,14 @@
 import logging
 import io
 import base64
+import os
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Any
 import PyPDF2
 import pdfplumber
 import fitz  # PyMuPDF
 from PIL import Image
+import docx  # python-docx for DOCX files
 
 from src.models.visual_element import VisualElement, VisualElementType
 
@@ -20,7 +22,7 @@ class TextExtractor:
 
     def __init__(self):
         """Initialize the text extractor."""
-        self.supported_extensions = {'.pdf'}
+        self.supported_extensions = {'.pdf', '.doc', '.docx'}
         self.extract_images = True  # Flag to control image extraction
 
     def extract_from_file(self, file_path: Path) -> Dict[str, Any]:
@@ -40,6 +42,8 @@ class TextExtractor:
 
         if extension == '.pdf':
             return self._extract_from_pdf(file_path)
+        elif extension in ['.doc', '.docx']:
+            return self._extract_from_doc(file_path)
         else:
             raise ValueError(f"Unsupported file format: {extension}")
 
@@ -239,6 +243,104 @@ class TextExtractor:
 
         doc.close()
         return visual_elements
+
+    def _extract_from_doc(self, doc_path: Path) -> Dict[str, Any]:
+        """
+        Extract text from DOC or DOCX files.
+
+        Args:
+            doc_path: Path to the DOC or DOCX file
+
+        Returns:
+            Dictionary with extracted text and metadata
+        """
+        logger.info(f"Extracting content from document: {doc_path}")
+
+        extension = doc_path.suffix.lower()
+        text = ""
+        page_count = 0
+
+        try:
+            if extension == '.docx':
+                # Use python-docx for DOCX files
+                doc = docx.Document(doc_path)
+                text_parts = []
+
+                # Extract text from paragraphs
+                for para in doc.paragraphs:
+                    if para.text:
+                        text_parts.append(para.text)
+
+                # Extract text from tables
+                for table in doc.tables:
+                    for row in table.rows:
+                        row_text = []
+                        for cell in row.cells:
+                            if cell.text:
+                                row_text.append(cell.text)
+                        if row_text:
+                            text_parts.append(' | '.join(row_text))
+
+                text = '\n'.join(text_parts)
+                page_count = len(doc.sections)  # Approximate page count
+
+                logger.info(f"Extracted {len(text)} characters from DOCX file")
+
+            elif extension == '.doc':
+                # For DOC files, we'll use a simple approach
+                # Note: This is a simplified approach and may not work for all DOC files
+                # A more robust solution would use libraries like pywin32 or antiword
+
+                # Try to convert to text using external tools if available
+                import subprocess
+                import tempfile
+
+                with tempfile.NamedTemporaryFile(suffix='.txt', delete=False) as temp_file:
+                    temp_path = temp_file.name
+
+                try:
+                    # Try using textract if available
+                    import textract
+                    text = textract.process(str(doc_path)).decode('utf-8')
+                    logger.info(f"Extracted {len(text)} characters from DOC file using textract")
+                except (ImportError, Exception) as e:
+                    logger.warning(f"Textract extraction failed: {e}")
+
+                    # Fallback: Try using antiword if available
+                    try:
+                        result = subprocess.run(['antiword', str(doc_path)], 
+                                               capture_output=True, text=True, check=True)
+                        text = result.stdout
+                        logger.info(f"Extracted {len(text)} characters from DOC file using antiword")
+                    except (subprocess.SubprocessError, FileNotFoundError) as e:
+                        logger.warning(f"Antiword extraction failed: {e}")
+
+                        # Last resort: Try using catdoc if available
+                        try:
+                            result = subprocess.run(['catdoc', str(doc_path)], 
+                                                   capture_output=True, text=True, check=True)
+                            text = result.stdout
+                            logger.info(f"Extracted {len(text)} characters from DOC file using catdoc")
+                        except (subprocess.SubprocessError, FileNotFoundError) as e:
+                            logger.warning(f"Catdoc extraction failed: {e}")
+                            raise ValueError(f"Could not extract text from DOC file: {e}")
+
+                # Estimate page count (very rough)
+                page_count = max(1, len(text) // 3000)
+
+            if not text:
+                raise ValueError("No text extracted from document")
+
+            return {
+                'text': text,
+                'page_count': page_count,
+                'method': 'python-docx' if extension == '.docx' else 'external-tool',
+                'visual_elements': []  # No visual elements for DOC/DOCX files for now
+            }
+
+        except Exception as e:
+            logger.error(f"Failed to extract text from document {doc_path}: {e}")
+            raise ValueError(f"Document extraction failed: {e}")
 
     def chunk_text(self, text: str, chunk_size: int = 3000, overlap: int = 200) -> List[str]:
         """

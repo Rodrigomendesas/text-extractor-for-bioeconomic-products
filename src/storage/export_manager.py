@@ -108,6 +108,59 @@ class ExportManager:
             self.logger.error(f"Extraction result export failed: {e}")
             return False
 
+    def export_products_to_csv(self, products: List[Dict[str, Any]], output_path: Path) -> bool:
+        """
+        Export products to CSV format.
+
+        This is a convenience method for exporting products directly to CSV format.
+        It handles both Product objects and dictionaries from parsed responses.
+
+        Args:
+            products: List of products to export (can be Product objects or dictionaries)
+            output_path: Output file path
+
+        Returns:
+            True if export successful
+        """
+        try:
+            # If products are dictionaries (from parsed responses), convert to CSV format
+            if products and isinstance(products[0], dict):
+                # Create flattened rows for CSV
+                rows = []
+                for product in products:
+                    # Basic product information
+                    row = {
+                        'nome_popular': product.get('nome_popular', ''),
+                        'nome_cientifico': product.get('nome_cientifico', ''),
+                        'paises': '; '.join(product.get('paises', [])) if isinstance(product.get('paises'), list) else product.get('paises', ''),
+                        'tipos_uso': '; '.join(product.get('tipos_uso', [])) if isinstance(product.get('tipos_uso'), list) else product.get('tipos_uso', ''),
+                        'categoria': product.get('categoria', ''),
+                        'regiao': '; '.join(product.get('regiao', [])) if isinstance(product.get('regiao'), list) else product.get('regiao', ''),
+                        'comunidade': product.get('comunidade', ''),
+                        'observacoes': product.get('observacoes', ''),
+                        'trecho_justificativo': product.get('trecho_justificativo', ''),
+                        'fonte': product.get('fonte', ''),
+                        'confianca': product.get('confianca', 0.0)
+                    }
+                    rows.append(row)
+
+                # Write CSV
+                if rows:
+                    with open(output_path, 'w', newline='', encoding='utf-8') as f:
+                        writer = csv.DictWriter(f, fieldnames=rows[0].keys())
+                        writer.writeheader()
+                        writer.writerows(rows)
+
+                self.logger.info(f"Exported {len(products)} products to CSV: {output_path}")
+                return True
+            else:
+                # If products are Product objects, use the standard export method
+                return self.export_products(products, output_path, ExportFormat.CSV, True)
+
+        except Exception as e:
+            self.logger.error(f"CSV export failed: {e}")
+            return False
+
     def _export_json(self, products: List[Product], output_path: Path, include_metadata: bool) -> bool:
         """Export products to JSON format."""
         try:

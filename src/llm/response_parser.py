@@ -27,12 +27,19 @@ class SociobiodiversityProduct:
     tipos_uso: List[str] = None
     fonte: str = ""
     confianca: float = 0.0
+    trecho_justificativo: Optional[str] = None
+    categoria: Optional[str] = None
+    regiao: Optional[List[str]] = None
+    comunidade: Optional[str] = None
+    observacoes: Optional[str] = None
 
     def __post_init__(self):
         if self.paises is None:
             self.paises = []
         if self.tipos_uso is None:
             self.tipos_uso = []
+        if self.regiao is None:
+            self.regiao = []
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary."""
@@ -42,7 +49,12 @@ class SociobiodiversityProduct:
             "paises": self.paises,
             "tipos_uso": self.tipos_uso,
             "fonte": self.fonte,
-            "confianca": self.confianca
+            "confianca": self.confianca,
+            "trecho_justificativo": self.trecho_justificativo,
+            "categoria": self.categoria,
+            "regiao": self.regiao,
+            "comunidade": self.comunidade,
+            "observacoes": self.observacoes
         }
 
 
@@ -138,6 +150,7 @@ class PanAmazonResponseParser:
                     for uso in produto.tipos_uso
                 )),
                 "produtos_com_nome_cientifico": sum(1 for p in produtos if p.nome_cientifico),
+                "produtos_com_trecho_justificativo": sum(1 for p in produtos if p.trecho_justificativo),
                 "tamanho_texto_original": len(original_text),
                 "tamanho_resposta": len(response_content),
                 "sucesso_parsing": True
@@ -252,6 +265,13 @@ class PanAmazonResponseParser:
                 if tipo_normalizado:
                     tipos_uso_validos.append(tipo_normalizado)
 
+        # Parse region
+        regiao = data.get("Região", [])
+        if isinstance(regiao, str):
+            regiao = [regiao]
+        elif not isinstance(regiao, list):
+            regiao = []
+
         # Validate confidence
         confianca = data.get("confianca", 0.0)
         try:
@@ -266,7 +286,12 @@ class PanAmazonResponseParser:
             paises=paises_validos,
             tipos_uso=tipos_uso_validos,
             fonte=data.get("fonte", "").strip(),
-            confianca=confianca
+            confianca=confianca,
+            trecho_justificativo=data.get("trecho_justificativo", "").strip() or None,
+            categoria=data.get("categoria", "").strip() or None,
+            regiao=regiao,
+            comunidade=data.get("Comunidade ou povo associado", "").strip() or None,
+            observacoes=data.get("observacoes", "").strip() or None
         )
 
     def _validate_country(self, country: str) -> bool:
@@ -372,6 +397,7 @@ class PanAmazonResponseParser:
                 "produtos_com_nome_cientifico": 0,
                 "produtos_com_paises": 0,
                 "produtos_com_usos": 0,
+                "produtos_com_trecho_justificativo": 0,
                 "produtos_alta_confianca": 0,
                 "produtos_baixa_confianca": 0,
                 "observacoes": ["Nenhum produto extraído"]
@@ -383,15 +409,17 @@ class PanAmazonResponseParser:
             "produtos_com_nome_cientifico": sum(1 for p in produtos if p.nome_cientifico),
             "produtos_com_paises": sum(1 for p in produtos if p.paises),
             "produtos_com_usos": sum(1 for p in produtos if p.tipos_uso),
+            "produtos_com_trecho_justificativo": sum(1 for p in produtos if p.trecho_justificativo),
             "produtos_alta_confianca": sum(1 for p in produtos if p.confianca >= 0.7),
             "produtos_baixa_confianca": sum(1 for p in produtos if p.confianca < 0.5),
         }
 
         # Calculate quality score
         completeness_score = (
-            quality_metrics["produtos_com_nome_cientifico"] / len(produtos) * 0.3 +
-            quality_metrics["produtos_com_paises"] / len(produtos) * 0.3 +
+            quality_metrics["produtos_com_nome_cientifico"] / len(produtos) * 0.2 +
+            quality_metrics["produtos_com_paises"] / len(produtos) * 0.2 +
             quality_metrics["produtos_com_usos"] / len(produtos) * 0.2 +
+            quality_metrics["produtos_com_trecho_justificativo"] / len(produtos) * 0.2 +
             quality_metrics["confianca_media"] * 0.2
         )
 
@@ -403,6 +431,8 @@ class PanAmazonResponseParser:
             observacoes.append("Muitos produtos com baixa confiança")
         if quality_metrics["produtos_com_nome_cientifico"] < len(produtos) * 0.5:
             observacoes.append("Poucos nomes científicos identificados")
+        if quality_metrics["produtos_com_trecho_justificativo"] < len(produtos) * 0.8:
+            observacoes.append("Poucos produtos com trecho justificativo")
         if quality_metrics["confianca_media"] >= 0.8:
             observacoes.append("Boa qualidade geral dos dados")
 

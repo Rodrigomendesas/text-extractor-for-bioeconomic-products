@@ -37,7 +37,21 @@ ENV/
 
 # Logs
 logs/
+scripts/logs/
 *.log
+
+# Output files
+data/output/
+scripts/data/output/
+
+# Example files
+data/input/examples/
+
+# Database files
+data/database/*.db
+
+# Error files
+error_detail.txt
 
 # Temporary files
 temp/

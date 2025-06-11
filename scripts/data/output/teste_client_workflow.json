@@ -2,99 +2,46 @@
   "resultado_extracao": {
     "produtos": [
       {
-        "nome_popular": "açaí",
-        "nome_cientifico": "Euterpe oleracea",
-        "paises": [
-          "Brasil"
-        ],
-        "tipos_uso": [
-          "alimentar",
-          "cosmético"
-        ],
-        "fonte": "Relatório Sociobiodiversidade Pan-Amazônica 2024",
-        "confianca": 0.9
-      },
-      {
-        "nome_popular": "castanha-do-pará",
-        "nome_cientifico": "Bertholletia excelsa",
-        "paises": [
-          "Brasil"
-        ],
-        "tipos_uso": [
-          "alimentar"
-        ],
-        "fonte": "Relatório Sociobiodiversidade Pan-Amazônica 2024",
-        "confianca": 0.9
-      },
-      {
-        "nome_popular": "copaíba",
-        "nome_cientifico": "Copaifera officinalis",
-        "paises": [
-          "Colômbia"
-        ],
-        "tipos_uso": [
-          "medicinal"
-        ],
-        "fonte": "Relatório Sociobiodiversidade Pan-Amazônica 2024",
-        "confianca": 0.9
-      },
-      {
-        "nome_popular": "maca",
-        "nome_cientifico": "Lepidium meyenii",
+        "nome_popular": "ungurahui",
+        "nome_cientifico": "não especificado",
         "paises": [
           "Peru"
         ],
         "tipos_uso": [
-          "alimentar"
-        ],
-        "fonte": "Relatório Sociobiodiversidade Pan-Amazônica 2024",
-        "confianca": 0.9
-      },
-      {
-        "nome_popular": "buriti",
-        "nome_cientifico": "Mauritia flexuosa",
-        "paises": [
-          "Equador"
-        ],
-        "tipos_uso": [
-          "artesanal"
+          "alimentar",
+          "medicinal"
         ],
         "fonte": "Relatório Sociobiodiversidade Pan-Amazônica 2024",
         "confianca": 0.9
       }
     ],
-    "resumo": "O texto apresenta produtos da sociobiodiversidade da Pan-Amazônia, incluindo frutos, óleos e plantas utilizados em alimentação, cosméticos, medicina tradicional e artesanato, com destaque para espécies como açaí, castanha-do-pará, copaíba, maca e buriti, distribuídos entre os países Brasil, Colômbia, Peru e Equador.",
+    "resumo": "",
     "idioma_detectado": "pt",
-    "total_produtos": 5,
+    "total_produtos": 1,
     "fonte_documento": "Relatório Sociobiodiversidade Pan-Amazônica 2024",
     "metadados_processamento": {
-      "total_produtos_extraidos": 5,
-      "produtos_alta_confianca": 5,
+      "total_produtos_extraidos": 1,
+      "produtos_alta_confianca": 1,
       "paises_encontrados": [
-        "brasil",
-        "equador",
-        "colômbia",
         "peru"
       ],
       "tipos_uso_encontrados": [
-        "artesanal",
-        "medicinal",
         "alimentar",
-        "cosmético"
+        "medicinal"
       ],
-      "produtos_com_nome_cientifico": 5,
+      "produtos_com_nome_cientifico": 1,
       "tamanho_texto_original": 772,
-      "tamanho_resposta": 1648,
+      "tamanho_resposta": 592,
       "sucesso_parsing": true
     }
   },
   "avaliacao_qualidade": {
-    "total_produtos": 5,
+    "total_produtos": 1,
     "confianca_media": 0.9,
-    "produtos_com_nome_cientifico": 5,
-    "produtos_com_paises": 5,
-    "produtos_com_usos": 5,
-    "produtos_alta_confianca": 5,
+    "produtos_com_nome_cientifico": 1,
+    "produtos_com_paises": 1,
+    "produtos_com_usos": 1,
+    "produtos_alta_confianca": 1,
     "produtos_baixa_confianca": 0,
     "qualidade_geral": 0.98,
     "observacoes": [
@@ -102,10 +49,10 @@
     ]
   },
   "custos": {
-    "tokens_entrada": 613,
-    "tokens_saida": 529,
-    "tokens_total": 1142,
-    "custo_usd": 0.000273,
+    "tokens_entrada": 1047,
+    "tokens_saida": 172,
+    "tokens_total": 1219,
+    "custo_usd": 0.000173,
     "modelo": "gpt-4.1-nano-2025-04-14"
   }
 }
